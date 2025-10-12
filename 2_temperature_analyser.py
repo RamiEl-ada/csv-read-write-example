@@ -38,6 +38,8 @@ if temperatures:
 else:
     print("No valid temperature data found.")
 
+# Scroll down below to see the solution
+
 
 
 
