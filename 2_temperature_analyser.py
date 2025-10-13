@@ -10,20 +10,18 @@
 def read_numbers_from_file(filename):
     numbers = []
     with open(filename, 'r') as file:
-        # TODO: Loop through each line in the file
-        for _______:
-            # TODO: Split each line by comma
-            _______
-            
+        for line in file:
+            line.strip().split(',')
             # Skip header or malformed lines
             if len(parts) != 2 or parts[0] == "Date":
                 continue
             try:
                 # TODO: Convert the second part to a float
-                _______
+                
                 numbers.append(number)
             except ValueError:
                 continue  # Skip non-numeric values
+            line += 1
     return numbers
 
 
