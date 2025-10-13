@@ -11,13 +11,14 @@ def read_numbers_from_file(filename):
     numbers = []
     with open(filename, 'r') as file:
         for line in file:
+            row = line.strip().split(',')
             line.strip().split(',')
             # Skip header or malformed lines
             if len(parts) != 2 or parts[0] == "Date":
                 continue
             try:
                 # TODO: Convert the second part to a float
-                
+                float(numbers)
                 numbers.append(number)
             except ValueError:
                 continue  # Skip non-numeric values

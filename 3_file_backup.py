@@ -1,13 +1,16 @@
 import os
+import datetime 
 
 def safe_write_to_file(filename, data):
-    backup_name = f"{filename}.backup"
-    
+    current_time = datetime.datetime.now()
+    backup_name = f"{filename} {current_time}.backup"
+    backup_message = f"Backup created on: {current_time}"
     # Create backup if original file exists
     if os.path.exists(filename):
         with open(filename, 'r', encoding='utf-8') as original, \
              open(backup_name, 'w', encoding='utf-8') as backup:
                 backup.write(original.read())
+                
         print(f"Backup created: {backup_name}")
     else:
         print("No existing file found. Creating a new one.")
@@ -27,7 +30,7 @@ safe_write_to_file('3_notes.txt', "Day 2 - Learned about file backups in Python.
 safe_write_to_file('3_notes.txt', "Day 3 - Experimented with CSV files and backups.\n")
 
 # --- Extension Task ---
-# TODO: Modify this code so that instead of overwriting '3_notes.txt.backup',
+# TODO: Modify this code so that instead of overwriting '3_noters.txt.backup',
 # it creates a new backup file each time with a timestamp in its name.
 
 # Example:
